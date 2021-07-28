@@ -1,0 +1,5 @@
+# Project exclude paths
+/xxx-cloud-order/target/
+/xxx-cloud-stock/target/
+
+.idea
