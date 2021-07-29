@@ -1,2 +1,11 @@
 server:
   port: 8081
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        namespace: public
+        server-addr: http://192.168.110.151:8848
+  application:
+    name: xxx-cloud-stock

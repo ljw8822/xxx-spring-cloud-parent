@@ -6,6 +6,7 @@
   <modules>
     <module>xxx-cloud-stock</module>
     <module>xxx-cloud-order</module>
+    <module>xxx-cloud-common</module>
   </modules>
 
 

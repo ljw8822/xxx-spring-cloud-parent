@@ -3,3 +3,5 @@
 /xxx-cloud-stock/target/
 
 .idea
+*.iml
+*/target/

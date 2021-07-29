@@ -19,7 +19,7 @@ public class TestController {
 
     @RequestMapping("create-order")
     public String addOrder() {
-        String result = restTemplate.getForObject("http://localhost:8081/stock/reduce", String.class);
+        String result = restTemplate.getForObject("http://xxx-cloud-stock/stock/reduce", String.class);
         return result;
     }
 }
