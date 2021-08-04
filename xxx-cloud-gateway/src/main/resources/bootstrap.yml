@@ -1,0 +1,29 @@
+server:
+  port: 8000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: xxx-cloud-order
+          uri: lb://xxx-cloud-order
+          predicates:
+            - Path=/order/**
+    nacos:
+      discovery:
+        namespace: public
+        server-addr: http://192.168.110.151:8848
+  application:
+    name: xxx-cloud-gateway
+
+knife4j:
+  enableAggregation: true
+  cloud:
+    enable: true
+    routes:
+      - name: 测试分组1
+        uri: xxx-cloud-order
+        location: /v2/api-docs?group=2.X版本
+      - name: 测试分组2
+        uri: knife4j.xiaominfo.com
+        location: /v2/api-docs?group=3.默认接口

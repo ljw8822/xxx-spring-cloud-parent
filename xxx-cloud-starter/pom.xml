@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>xxx-cloud-starter-redis</module>
+        <module>xxx-cloud-starter-web</module>
     </modules>
 
 
