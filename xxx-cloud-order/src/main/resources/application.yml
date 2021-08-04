@@ -1,11 +1,32 @@
 server:
-  port: 8080
+  port: 9000
 
 spring:
+  redis:
+    host: 192.168.110.151
+    port: 6379
+    database: 15
   cloud:
     nacos:
       discovery:
         namespace: public
         server-addr: http://192.168.110.151:8848
+    circuitbreaker:
+      hystrix:
+        enabled: true
+    sentinel:
+      eager: true
+      transport:
+        dashboard: localhost:8080
   application:
     name: xxx-cloud-order
+  cache:
+    redis:
+      key-prefix: order
+feign:
+  sentinel:
+    enabled: true
+
+
+
+

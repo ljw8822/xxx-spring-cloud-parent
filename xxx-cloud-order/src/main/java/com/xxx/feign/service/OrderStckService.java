@@ -1,5 +1,6 @@
 package com.xxx.feign.service;
 
+import com.xxx.feign.fallback.OrderStkServiceFallback;
 import com.xxx.feign.interceptor.FeignConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @modified By：
  * @version: $
  */
-@FeignClient(value = "xxx-cloud-stock",configuration = FeignConfiguration.class)
+@FeignClient(value = "xxx-cloud-stock",configuration = FeignConfiguration.class, fallback = OrderStkServiceFallback.class)
 public interface OrderStckService {
 
     @GetMapping("stock/reduce")

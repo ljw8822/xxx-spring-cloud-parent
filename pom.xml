@@ -7,6 +7,8 @@
     <module>xxx-cloud-stock</module>
     <module>xxx-cloud-order</module>
     <module>xxx-cloud-common</module>
+    <module>xxx-cloud-starter</module>
+    <module>xxx-cloud-sentinel-dashboard</module>
   </modules>
 
 
@@ -21,8 +23,13 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
-    <spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+    <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
     <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
+    <spring.redis.version>2.4.0</spring.redis.version>
+    <fastjson.version>1.2.75</fastjson.version>
+    <hutool.version>5.6.3</hutool.version>
+    <sentinel.version>1.8.2</sentinel.version>
+    <redission.version>3.13.6</redission.version>
   </properties>
 
   <dependencies>
@@ -57,6 +64,44 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+        <version>${spring.redis.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba.csp</groupId>
+        <artifactId>sentinel-core</artifactId>
+        <version>${sentinel.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.example</groupId>
+        <artifactId>xxx-cloud-starter-redis</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.redisson</groupId>
+        <artifactId>redisson</artifactId>
+        <version>${redission.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 

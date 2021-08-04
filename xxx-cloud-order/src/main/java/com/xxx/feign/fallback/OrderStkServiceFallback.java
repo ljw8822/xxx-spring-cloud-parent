@@ -1,6 +1,7 @@
 package com.xxx.feign.fallback;
 
 import com.xxx.feign.service.OrderStckService;
+import org.springframework.stereotype.Component;
 
 /**
  * @author ：jiweili
@@ -9,6 +10,7 @@ import com.xxx.feign.service.OrderStckService;
  * @modified By：
  * @version: $
  */
+@Component
 public class OrderStkServiceFallback implements OrderStckService {
     @Override
     public String reduceStock() {

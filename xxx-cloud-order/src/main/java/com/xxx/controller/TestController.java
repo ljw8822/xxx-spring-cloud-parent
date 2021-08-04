@@ -1,8 +1,11 @@
 package com.xxx.controller;
 
+import com.xxx.entity.Order;
 import com.xxx.feign.service.OrderStckService;
+import com.xxx.service.OrderService;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +19,9 @@ public class TestController {
 
     @Autowired
     OrderStckService orderStckService;
+
+    @Autowired
+    OrderService orderService;
 
     @RequestMapping("order/{orderId}")
     public String getOrder(@PathVariable("orderId") String orderId) {
@@ -31,5 +37,13 @@ public class TestController {
     public String addOrder() {
         String result = restTemplate.getForObject("http://xxx-cloud-stock/stock/reduce", String.class);
         return result;
+    }
+
+    @GetMapping("get-order-list")
+    public String getOrderList() {
+        for (Order order : orderService.queryOrderListByUserId("123")) {
+            System.out.println(order);
+        }
+        return "getOrderList ok";
     }
 }
